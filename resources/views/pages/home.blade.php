@@ -13,8 +13,10 @@
     
             <tbody>
                 @foreach ($saints as $saint)
-                    <tr>
-                        <td>{{$saint -> nome}}</td>
+                    <tr> 
+                        <td>
+                            <a href="/saint/{{$saint->id}}">{{$saint -> nome}}</a>
+                        </td>
                         <td>{{$saint -> luogoNascita}}</td>
                         <td>{{$saint -> dataBenedizione}}</td>
                         <td>{{$saint -> numeroMiracoli}}</td>

@@ -16,4 +16,15 @@ class MainController extends Controller
 
         return view('pages.home', $data);
     }
+
+    public function show($id){
+
+        $saint = Saint::find($id);
+
+        $data= [
+            'saint' => $saint
+        ];
+
+        return view('pages.saint', $data);
+    }
 }
