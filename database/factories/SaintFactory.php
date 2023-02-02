@@ -17,7 +17,10 @@ class SaintFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nome' => fake() -> firstname(),
+            'luogoNascita' => fake() -> cityName(),
+            'dataBenedizione' => fake() ->dateTimeAD(),
+            'numeroMiracoli' => fake() -> numberBetween(5, 20),
         ];
     }
 }
