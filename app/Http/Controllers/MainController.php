@@ -17,6 +17,7 @@ class MainController extends Controller
         return view('pages.home', $data);
     }
 
+    // funzione per singolo santo che stampa info dedicata al santo:
     public function show($id){
 
         $saint = Saint::find($id);
@@ -26,5 +27,15 @@ class MainController extends Controller
         ];
 
         return view('pages.saint', $data);
+    }
+
+    // funzione per eliminare il santo: 
+    public function saintDestroy($id){
+
+        $saint = Saint::find($id);
+
+        $saint->delete();
+
+        return redirect()->route('home');
     }
 }

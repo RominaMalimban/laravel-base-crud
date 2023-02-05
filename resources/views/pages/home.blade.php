@@ -15,11 +15,17 @@
                 @foreach ($saints as $saint)
                     <tr> 
                         <td>
+                            {{-- rotta per singolo santo che stampa info --}}
                             <a href="/saint/{{$saint->id}}">{{$saint -> nome}}</a>
                         </td>
                         <td>{{$saint -> luogoNascita}}</td>
                         <td>{{$saint -> dataBenedizione}}</td>
                         <td>{{$saint -> numeroMiracoli}}</td>
+
+                        <td>
+                            {{-- rotta per eliminare santo --}}
+                            <a href="{{route('saint.destroy', ['id'=> $saint -> id ]) }}">Elimina</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
