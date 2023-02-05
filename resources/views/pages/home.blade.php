@@ -1,9 +1,12 @@
-@extends('layouts.main-layout');
+@extends('layouts.main-layout')
 
 @section('content')
 
     <div class="container">
-        <table class="table">
+
+        {{-- Link che mi riporta a nuova pagina per creazione nuovo santo: --}}
+        <a href="{{('/saint/create')}}">Create new saint</a>
+        <table class="table my-3">
             <thead>
                 <th>Name</th>
                 <th>Place of Birth</th>
@@ -15,7 +18,7 @@
                 @foreach ($saints as $saint)
                     <tr> 
                         <td>
-                            {{-- rotta per singolo santo che stampa info --}}
+                            {{-- link con rotta per dettagli singolo santo --}}
                             <a href="/saint/{{$saint->id}}">{{$saint -> nome}}</a>
                         </td>
                         <td>{{$saint -> luogoNascita}}</td>
@@ -23,7 +26,7 @@
                         <td>{{$saint -> numeroMiracoli}}</td>
 
                         <td>
-                            {{-- rotta per eliminare santo --}}
+                            {{-- link con rotta per eliminazione santo --}}
                             <a href="{{route('saint.destroy', ['id'=> $saint -> id ]) }}">Elimina</a>
                         </td>
                     </tr>
