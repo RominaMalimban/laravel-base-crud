@@ -12,7 +12,7 @@ Route::get('/saint/show/{id}', [MainController::class, 'show'])
     ->name('saint.show'); 
 
 // rotta per eliminazione santo:
-Route::get('/saint/{id}/destroy', [MainController::class, 'saintDestroy'])
+Route::get('/saint/destroy/{id}', [MainController::class, 'saintDestroy'])
     ->name('saint.destroy');
 
 // rotta per creazione nuovo santo:

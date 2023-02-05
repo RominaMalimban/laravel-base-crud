@@ -19,7 +19,7 @@
                     <tr> 
                         <td>
                             {{-- link con rotta per dettagli singolo santo --}}
-                            <a href="/saint/{{$saint->id}}">{{$saint -> nome}}</a>
+                            <a href="{{route('saint.show', ['id'=> $saint -> id ]) }}">{{$saint -> nome}}</a>
                         </td>
                         <td>{{$saint -> luogoNascita}}</td>
                         <td>{{$saint -> dataBenedizione}}</td>
